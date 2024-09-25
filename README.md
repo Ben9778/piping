@@ -1,2 +1,2 @@
 # piping
-piping is a channel to connect local system and external server,it use to request foward  and response local system data.
+Pipping is a bridge used to connect the internal network and external access. Its main function is to receive and process notification information of third-party payment results in the internal network environment. The program can receive request terminals including browsers, nodejs, postman, wget, curl, and HTTP requests from mainstream programming languages
