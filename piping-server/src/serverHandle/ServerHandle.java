@@ -1,5 +1,6 @@
 package serverHandle;
 
+import config.OutConfig;
 import define.KeywordDefine;
 import util.MessageParser;
 import util.ValidateToken;
@@ -42,12 +43,12 @@ public class ServerHandle{
                 }
             }
         } catch (IOException e) {
-            System.err.println("client handle error: " + e.getMessage());
+            OutConfig.out("client handle error: " + e.getMessage());
         } finally {
             try {
                 socket.close();
             } catch (IOException e) {
-                System.err.println("close socket error: " + e.getMessage());
+                OutConfig.out("close socket error: " + e.getMessage());
             }
         }
     }
@@ -58,7 +59,7 @@ public class ServerHandle{
      */
     protected void processValidateMessage(PrintWriter out) {
         clients.put(KeywordDefine.authToken, out);
-        System.out.println("client" + socket.getInetAddress() + "connected");
+        OutConfig.out("client" + socket.getInetAddress() + "connected");
         out.println("connect success");
         out.flush();
     }
@@ -74,7 +75,7 @@ public class ServerHandle{
         assert message != null;
         String hostAddress = socket.getInetAddress().getHostAddress();
         clients.put(hostAddress, out);
-        System.out.println("client" + socket.getInetAddress() + "connected");
+        OutConfig.out("client" + socket.getInetAddress() + "connected");
         PrintWriter printWriter = clients.get(KeywordDefine.authToken);
         printWriter.println(message + "hostAddress:" + hostAddress + "\r");
         printWriter.flush();
@@ -86,7 +87,7 @@ public class ServerHandle{
      */
     protected void processResponseMessage(String message) {
         assert message != null;
-        System.out.println("receive" + socket.getInetAddress() + "message");
+        OutConfig.out("receive" + socket.getInetAddress() + "message");
         String responseMessage = MessageParser.responseParser(message);
         String originAddress = MessageParser.addressParser(message);
         PrintWriter clientOut = clients.get(originAddress);
