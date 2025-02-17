@@ -6,4 +6,4 @@
 
 2.__piping-clients__: 支付環境的客戶端, 主要負責向piping-server發送請求, 將伺服器發送的請求數據重定向到本地應用程序端口,再將數據轉發回伺服器。
 ## 反饋與聯繫
-如有任何疑問或建議, 歡迎來信至BennyWong01@outlook.com。
+如有任何疑問或建議, 歡迎來信至Bennywong01@outlook.com。
