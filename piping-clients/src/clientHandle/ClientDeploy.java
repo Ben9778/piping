@@ -1,6 +1,6 @@
 package clientHandle;
 
-import entity.PortModel;
+import Entity.PortModel;
 
 public class ClientDeploy {
     private final PortModel portModel;

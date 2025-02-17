@@ -1,6 +1,6 @@
 package clientHandle;
 
-import entity.PortModel;
+import Entity.PortModel;
 import util.Define;
 
 import java.io.BufferedReader;
